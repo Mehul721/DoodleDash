@@ -11,6 +11,9 @@
 		7542993C2C692BFD00C4D579 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542993B2C692BFD00C4D579 /* ContentView.swift */; };
 		7542993E2C692BFE00C4D579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7542993D2C692BFE00C4D579 /* Assets.xcassets */; };
 		754299412C692BFE00C4D579 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754299402C692BFE00C4D579 /* Preview Assets.xcassets */; };
+		754299482C6933D600C4D579 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754299472C6933D600C4D579 /* MenuView.swift */; };
+		7542994A2C6933F500C4D579 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754299492C6933F500C4D579 /* MatchManager.swift */; };
+		7542994E2C69342700C4D579 /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542994D2C69342700C4D579 /* Miscellaneous.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		7542993B2C692BFD00C4D579 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7542993D2C692BFE00C4D579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		754299402C692BFE00C4D579 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		754299472C6933D600C4D579 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		754299492C6933F500C4D579 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
+		7542994D2C69342700C4D579 /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,9 @@
 				7542993B2C692BFD00C4D579 /* ContentView.swift */,
 				7542993D2C692BFE00C4D579 /* Assets.xcassets */,
 				7542993F2C692BFE00C4D579 /* Preview Content */,
+				754299472C6933D600C4D579 /* MenuView.swift */,
+				754299492C6933F500C4D579 /* MatchManager.swift */,
+				7542994D2C69342700C4D579 /* Miscellaneous.swift */,
 			);
 			path = DoodleDash;
 			sourceTree = "<group>";
@@ -138,6 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7542993C2C692BFD00C4D579 /* ContentView.swift in Sources */,
+				7542994E2C69342700C4D579 /* Miscellaneous.swift in Sources */,
+				7542994A2C6933F500C4D579 /* MatchManager.swift in Sources */,
+				754299482C6933D600C4D579 /* MenuView.swift in Sources */,
 				7542993A2C692BFD00C4D579 /* DoodleDashApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
