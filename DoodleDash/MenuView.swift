@@ -10,14 +10,16 @@ import SwiftUI
 struct MenuView: View {
     @ObservedObject var matchManager: MatchManager
     @State var isAnimating = false
-    let gradient = Gradient(colors: [.yellow, .black])
+    let gradient = Gradient(colors: [.purple, .black])
     
     var body: some View {
-        ZStack{
-             LinearGradient(
+        ZStack {
+            LinearGradient(
                 colors: [Color.yellow, Color.primaryYellow],
-                startPoint: .top, endPoint: .bottom)
-             .ignoresSafeArea()
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Spacer()
@@ -26,11 +28,12 @@ struct MenuView: View {
                     .resizable()
                     .scaledToFit()
                     .padding(30)
-                
+
                 Spacer()
                 
+                
                 Button(action: {
-                    // Add your action here
+         
                 }) {
                     Text("PLAY")
                         .font(.largeTitle)
@@ -49,18 +52,23 @@ struct MenuView: View {
                                            endPoint: isAnimating ? .bottomLeading : .topTrailing),
                             lineWidth: 5
                         )
+                        
                         .animation(
-                            .spring(duration: 2)
-                            .repeatForever(autoreverses: true),
+                            .easeInOut(duration: 1.5)
+                                .repeatForever(autoreverses: true),
                             value: isAnimating
                         )
+                        
                 )
                 .onAppear {
                     isAnimating = true
                 }
                 
-                
                 Spacer()
+                Text(matchManager.authenticationState.rawValue)
+                    .font(.caption2)
+                    .foregroundColor(Color("black"))
+                    .padding()
             }
         }
     }
@@ -70,3 +78,5 @@ struct MenuView: View {
 #Preview {
     MenuView(matchManager: MatchManager())
 }
+
+

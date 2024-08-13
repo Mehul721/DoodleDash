@@ -6,19 +6,11 @@
 
 import Foundation
 
-enum PlayerAuthState {
-    case authenticating
-    case authenticated
-    case unauthenticated
-    case error
-    case restricted
-}
-
 class MatchManager: ObservableObject {
     
     @Published var inGame = false
     @Published var isGameOver = false
-    @Published var authenticationState = PlayerAuthState.authenticating
+    @Published var authenticationState = PlayAuthState.authenticating
     @Published var currentlyDrawing = false
     @Published var drawPrompt = ""
     @Published var pastGuesses = [PastGuess]()

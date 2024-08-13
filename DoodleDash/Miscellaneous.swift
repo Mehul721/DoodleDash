@@ -74,5 +74,5 @@ enum PlayAuthState:String{
         var correct: Bool
     }
 
-    let maxTimeRemaining = 30
+    let maxTimeRemaining = 100
     
