@@ -33,16 +33,26 @@ struct GameView: View {
     var topBar:some View{
         ZStack{
             HStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {}, label: {
                     Image(systemName: "arrowshape.turn.up.left.circle.fill")
+                        .font(.largeTitle)
+                        .tint(Color(matchManager.currentlyDrawing ? "primaryPurple" : "primaryRed"))
+                    
                 }
-                
                 )
-            }
-            
+                Spacer()
+                
+                Label("\(matchManager.remainingTime)",
+                      systemImage: "clock.fill")
+                .bold()
+                .font(.title2)
+                .foregroundStyle(Color(matchManager.currentlyDrawing ? "primaryPurple" : "primaryRed"))
+                
+            }}
+        .padding(.vertical,15)
         }
     }
-}
+
 
         #Preview {
             GameView(matchManager: MatchManager())
