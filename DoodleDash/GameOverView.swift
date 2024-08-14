@@ -1,13 +1,14 @@
 //
-//  MenuView.swift
+//  GameOverView.swift
 //  DoodleDash
 //
-//  Created by Mehul Jain on 11/08/24.
+//  Created by Mehul Jain on 14/08/24.
 //
 
 import SwiftUI
 
-struct MenuView: View {
+struct GameOverView: View {
+    
     @ObservedObject var matchManager: MatchManager
     @State var isAnimating = false
     let gradient = Gradient(colors: [.purple, .black])
@@ -24,26 +25,29 @@ struct MenuView: View {
             VStack {
                 Spacer()
                 
-                Image("Logo")
+                Image("GameOver")
                     .resizable()
                     .scaledToFit()
                     .padding(30)
 
-                Spacer()
+                Text("Score:\(matchManager.score)")
+                    .font(.largeTitle)
+                    .bold()
                 
+                Spacer()
+                Spacer()
                 
                 Button(action: {
          
                 }) {
-                    Text("PLAY")
+                    Text("MENU")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.black)
-                        .padding(.vertical, 20)
-                        .padding(.horizontal, 100)
+                        .padding(.vertical, 18)
+                        .padding(.horizontal, 70)
                         .background(Capsule().fill(Color.clear))
                 }
-                .disabled(matchManager.authenticationState != .authenticated || matchManager.inGame)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
                         .strokeBorder(
@@ -63,9 +67,6 @@ struct MenuView: View {
                 .onAppear {
                     isAnimating = true
                 }
-                Text(matchManager.authenticationState.rawValue)
-                    .font(.subheadline)
-                    .padding()
                 
                 Spacer()
                 
@@ -75,9 +76,6 @@ struct MenuView: View {
     }
 }
 
-
 #Preview {
-    MenuView(matchManager: MatchManager())
+    GameOverView(matchManager: MatchManager())
 }
-
-
