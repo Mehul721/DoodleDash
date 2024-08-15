@@ -12,6 +12,10 @@ struct GameView: View {
     @State var eraserEnabled = false
     @State var DrawingGuess = ""
     
+    func makeGuess(){
+        
+    }
+    
     var body: some View {
         ZStack {
             GeometryReader { geometry in
@@ -131,12 +135,39 @@ struct GameView: View {
                     .bold()
                     .padding()
                     .foregroundStyle(Color.yellow)
-            }else{
-                
+            }else{HStack{
+                Label("Guess the drawing..", systemImage: "exclamationmark.bubble.fill")
+                    .font(.title2)
+                    .bold()
+                    .scaledToFit()
+                    .foregroundStyle(Color("primaryPurple"))
+                Spacer()
+            }
+                HStack {
+                    
+                    TextField("Type your guess..", text: $DrawingGuess)
+                        .bold()
+                        .padding()
+                        .background(
+                            Capsule(style: .circular)
+                                .fill(.white)
+                        )
+                        .onSubmit(makeGuess)
+                    Button {
+                        makeGuess()
+                        
+                    } label: {
+                        Image(systemName: "chevron.right.circle.fill")
+                            .renderingMode(.original)
+                            .foregroundColor(Color("primaryPurple"))
+                            .font(.system(size: 50))
+                        
+                    }
+                }
             }
         }
         .frame(maxWidth: .infinity)
-        .padding([.bottom, .horizontal], 6)
+        .padding([.bottom, .horizontal], 15)
         .padding(.vertical)
         .background((matchManager.currentlyDrawing ? Color("playingColor") : Color("guessingColor")))
         .opacity(0.8)

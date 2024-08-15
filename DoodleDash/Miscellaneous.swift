@@ -75,4 +75,4 @@ enum PlayAuthState:String{
     }
 
     let maxTimeRemaining = 100
-    
+

@@ -76,6 +76,7 @@ struct GameOverView: View {
     }
 }
 
+
 #Preview {
     GameOverView(matchManager: MatchManager())
 }
